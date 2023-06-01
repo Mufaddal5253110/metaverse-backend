@@ -14,7 +14,7 @@ nftRouter.post("/api/v1/add-nft", async (req, res) => {
 
 nftRouter.get("/api/v1/nft", async (req, res) => {
   try {
-    const nft = Nft.find();
+    const nft = await Nft.find();
     res.json(nft);
   } catch (e) {
     res.status(500).json({ error: e.message });
