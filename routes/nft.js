@@ -25,7 +25,7 @@ nftRouter.get("/api/v1/nft", async (req, res) => {
 
 nftRouter.get("/api/v1/nft/:id", async (req, res) => {
   try {
-    const nft = await Nft.find({ownerId:id});
+    const nft = await Nft.find({ownerId:req.params.id});
     res.json(nft);
   } catch (e) {
     res.status(500).json({ error: e.message });
