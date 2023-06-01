@@ -1,8 +1,14 @@
 const express = require("express");
 const nftRouter = express.Router();
 const Nft = require("../models/nft.js");
+const cors = require("cors");
 
-nftRouter.post("/api/v1/add-nft", async (req, res) => {
+const corsOptions = {
+  origin: "http://localhost:8080",
+};
+
+
+nftRouter.post("/api/v1/add-nft",cors(corsOptions), async (req, res) => {
   try {
     let nft = new Nft(req.body);
     nft = await nft.save();
