@@ -4,6 +4,8 @@ const bodyParser  = require("body-parser");
 const cors = require("cors");
 
 const nftRouter = require("./routes/nft");
+const roomRouter = require("./routes/room");
+
 
 const DB = "mongodb+srv://mufaddalshakir55:mufaddalshakir55@cluster0.ydq7nvw.mongodb.net/?retryWrites=true&w=majority";
 const app = express();
@@ -32,3 +34,4 @@ app.listen(8080, "localhost", () => {
 });
 
 app.use(nftRouter)
+app.use(roomRouter)
