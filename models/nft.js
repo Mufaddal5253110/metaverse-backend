@@ -17,6 +17,10 @@ const nftSchema = mongoose.Schema({
     required: true,
     type: String,
   },
+  imageId: {
+    required: true,
+    type: String,
+  },
 
 });
 
