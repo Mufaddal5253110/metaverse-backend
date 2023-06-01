@@ -10,3 +10,6 @@ roomRouter.get("/api/v1/room/:id", async (req, res) => {
     res.status(500).json({ error: e.message });
   }
 });
+
+
+module.exports = roomRouter;
